@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/WB_LVL_2_middleearth/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/WB_LVL_2_middleearth/assets/index-af61cd3b.js"></script>
+    <link rel="stylesheet" href="/WB_LVL_2_middleearth/assets/index-f8b093c1.css">
+  </head>
+  <body>
+    <h1>Средиземье</h1>
+    <div id="gameTable">
+      <div id="redArmy" class="army">
+        <div class="race_picker">
+          <span></span>
+          <h2>Люди</h2>
+          <span></span>
+        </div>
+        <div class="army_quantity">
+          <h3>Численность:</h3>
+          <input
+            placeholder="10"
+            class="quantity_picker"
+            id="army1Quantity"
+            type="text"
+          />
+        </div>
+        <ul class="army_list"></ul>
+      </div>
+      <div id="fightInfo">
+        <div id="fightLog">
+          <div id="eventList"></div>
+        </div>
+        <div id="fightOptions">
+          <button id="gatherArmies">Собрать войска</button>
+          <button id="makeMove">Сделать 1 ход</button>
+          <button id="endFight">Завершить бой</button>
+          <button id="autoFight">Автоматический бой</button>
+        </div>
+      </div>
+      <div id="blueArmy" class="army">
+        <div class="race_picker">
+          <span></span>
+          <h2>Люди</h2>
+          <span></span>
+        </div>
+        <div class="army_quantity">
+          <h3>Численность:</h3>
+          <input
+            placeholder="10"
+            class="quantity_picker"
+            id="army2Quantity"
+            type="text"
+          />
+        </div>
+        <ul class="army_list"></ul>
+      </div>
+    </div>
+    
+  </body>
+</html>

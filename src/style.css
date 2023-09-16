@@ -1,0 +1,257 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 95vh;
+}
+
+h1 {
+  font-size: 64px;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 36px;
+}
+h3 {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+h3 > span {
+  cursor: pointer;
+}
+
+#gameTable {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  gap: 50px;
+}
+
+.army {
+  width: 100%;
+  height: 1000px;
+  border-radius: 15px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+#redArmy {
+  border: 1px solid rgb(238, 83, 83);
+  box-shadow: 0 0 5px rgb(238, 83, 83);
+}
+
+#blueArmy {
+  border: 1px solid rgb(99, 147, 252);
+  box-shadow: 0 0 5px rgb(99, 147, 252);
+}
+
+#fightInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#fightOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 20px;
+}
+
+#fightLog {
+  background-color: rgba(255, 255, 255, 0.048);
+  width: 100%;
+  height: 700px;
+  border: 1px solid silver;
+  box-shadow: 0 0 5px silver;
+  border-radius: 15px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+#eventList {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+#eventList > p {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#eventList::-webkit-scrollbar {
+  width: 8px;
+}
+
+#eventList::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+#eventList::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+}
+
+.red_event {
+  background-color: rgb(238, 83, 83);
+  border: 1px solid rgb(238, 83, 83);
+  color: white;
+}
+
+.blue_event {
+  background-color: rgb(99, 147, 252);
+  border: 1px solid rgb(99, 147, 252);
+  color: white;
+}
+
+.silver_event {
+  background-color: rgb(14, 214, 114);
+  border: 1px solid rgb(14, 214, 114);
+  color: white;
+}
+
+#fightOptions > button {
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid silver;
+  box-shadow: 0 0 5px silver;
+  padding: 18px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#fightOptions > button:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
+  background-color: transparent;
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.race_picker {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.race_picker > span {
+  width: 15px;
+  height: 15px;
+  border-top: 3px solid rgba(255, 255, 255, 0.6);
+  border-right: 3px solid rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
+  display: block;
+  cursor: pointer;
+}
+
+.race_picker > span:hover {
+  border-top: 3px solid rgba(255, 255, 255, 1);
+  border-right: 3px solid rgba(255, 255, 255, 1);
+}
+
+.race_picker :first-child {
+  rotate: -135deg;
+}
+
+.race_picker :last-child {
+  rotate: 45deg;
+}
+
+.army_quantity {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity_picker {
+  margin-top: 10px;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  width: 100px;
+  padding: 2px 5px;
+  font-size: 30px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  outline: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.army_list {
+  height: 820px;
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.army_list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.army_list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+.army_list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+}
+
+.army_list > li {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.army_list > li > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  z-index: -1;
+}
